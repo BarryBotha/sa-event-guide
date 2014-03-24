@@ -1,6 +1,7 @@
 *.scss
 
 npm-debug.log
+scss/
 node_modules/
 .DS_Store
 .sass-cache

@@ -6,6 +6,7 @@
 // Mobile Nav
 // Initiate Nivo Slider
 // Page Heading Color
+// Back to Top
 
 
 // === NAMESPACE === //
@@ -21,6 +22,7 @@ $(function(){
 		app.go.mobileNav();
 		app.go.initNivo();
 		app.go.pageHead();
+		app.go.toTop();
 
 		// ==== TRIGGER ON RESIZE (DEBOUNCE) ==== //
 		var updateLayout = _.debounce(function(e) {
@@ -100,6 +102,24 @@ app.go = {
 			theColor = activePage.data('color');
 
 		$('.page-head').addClass(theColor);
+	},
+
+	// Back to Top
+	toTop: function() {
+		$(window).scroll(function() {
+	    	var jTop = $('.toTop'),
+	    		scrollPos = $(this).scrollTop();
+
+			if ( scrollPos != 0 && scrollPos > 400 ) {
+				jTop.fadeIn();	
+			} else {
+				jTop.fadeOut(100);
+			}
+		});
+	 
+		$('.toTop').on('click', function() {
+			$('body, html').animate({ scrollTop: 0 },400);
+		});
 	}
 
 }

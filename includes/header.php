@@ -149,5 +149,9 @@
 				</nav>
 
     		</div>
+
+            <div class="toTop">
+                <i class="fa fa-arrow-up"></i>
+            </div>
     		
     	</header>
